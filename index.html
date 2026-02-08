@@ -29,11 +29,13 @@
             margin-left: 20px;
             padding-left: 10px;
             border-left: 4px solid blue;
+            word-wrap: break-word;
         }
         .box {
             display: block;
-            padding: 10px;
+            padding: 5px;
             margin-left: 10px;
+            margin-right: 10px;
             border: 1px solid #ccc;
             background-color: rgb(60, 98, 168);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -43,6 +45,7 @@
             margin: 20px;
             background-color: rgb(0, 0, 68);
             color: white;
+            max-height: fit-content;
         }
         a:link {
             color: cyan;
@@ -50,16 +53,28 @@
         a:visited {
             color: lightcyan;
         }
+        img {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 100px;
+            height: 100px;
+            transform: scaleX(-1);
+            float: right;
+        }
     </style>
 </head>
 <body>
-    <h1>https to custom protocol redirector</h1>
-    <p>This page handles custom protocol redirects. Use the following URL parameters:</p>
-    <ul>
-        <li><code>protocol</code> - The custom protocol to redirect to (e.g., "roblox")</li>
-        <li><code>launchargs</code> - URL-encoded arguments to pass to the protocol</li>
-    </ul>
-    <p>Example: <code>?protocol=app&launchargs=some%2Fpath</code></p>
+    <div>
+        <h1>https to custom protocol redirector</h1>
+        <p>This page handles custom protocol redirects. Use the following URL parameters:</p>
+        <ul>
+            <li><code>protocol</code> - The custom protocol to redirect to (e.g., "roblox")</li>
+            <li><code>launchargs</code> - URL-encoded arguments to pass to the protocol</li>
+        </ul>
+        <p>Example: <code>?protocol=app&launchargs=some%2Fpath</code></p>
+    </div>
+    <img height="100" width="100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAABR1BMVEVHcExQw8oCyM8BeHwJydAAd3wBgIUYy9Ijpq0ByM8CeX0DyM8Ad3uq8v8FgocEyM8Ax84BeHwOytGK5PMFyM8bjZMKydAAd3sDf4MBeX0Uy9IPy9IIydCa7v5y4OcAd3sByM8byM+49P8DfYEKytEByM8OytEFf4QCe4Cb7/8CfIC69f+69P8Ee38OytFlxdIAgIW99f+e8P9FrbcFfIDN9/+l8P/H9v7N9/8AdnoGfYEGfYICeX3N+P+c7/9Htb8umaFS2uIAmZ4AmqAAx84AdnrM9/+Z7v8AdXkAyM+b8P/P+P+y8/+Y7v8Axs0AnKG/9PwOy9IAQkRI2OCT6vgAnqSK6PBszNmp7/dZ3OR82ecHfYIPg4gw09p45OtOuMIfz9ag7fUllZ1bwMw8pq82oaoAs7kAvcQJpqwvnaUAaGsAYWQAZWh6vmfFAAAARHRSTlMAA/H+OekpFAf5n4r2Xg/PqL5n/pn+St8Z0R25fvQLrOcuFlPE2HJFkthteUp5Wfw4JDn+IvS725+LX4lkxJL6a8bBgNv/TDUAAAUwSURBVGje7ZnnX+JIGMepIkWp0lVQVFTsrrq73rp3F0MCkgVh6dW67f9/fRNIzzwh+9l4r/J7RSbDfPPUSbFYTJkyZcqUqf9bVlZvs7QrlEbyeiORwFSRdCiaXTMY4iUYhiEEsb/dmZzXsWggYzFFYMQwtoDDwEAECECZ0KKB7oLk3jYsDUIghLBFjYI4bCCEybmMSmE/bIr70ChTIjCEiOiKisshKuvC/iXqVqYvKhWariHRfj3+ivptojL+wKFL218MQ9cG9c6w2ZhM2u3JZPXian+pcKLdALaUofSH1H/Y5k8StUGn2a6SZFkUOnh3+XckpNFp1AnjDiSV5ZjcmhHqQwRAq6o0pAnalks71nRCkENSSZUpyEuDYRsBcAiyWePKJhVy6YMgBZRTXbl6o4pdH6ncHgv90+3fTuqEEGn5pI39SxJCkGS1LunRBO1XWwO0vqwUsfQXqSUUEKloOhW16oEQXjHqBW0E2R6rW5pXbowbD9niPXty9U6bQXYYzP9Tsr0mA/SkWXtdW7qcgyhPavirlDY1oPkxIX1mkGSdwS5A2yR7DdT82Pwq4MyoVvUYwjojLeybh24o8mv7GDPa9fGgOTciM1vcad6W5BYA2bjCmTFgCKbWEGvmTpFaNOrQtHp3BnbwFC5xy012AaajGJAwXm5/2l+EMRsf/Sw2vwZtOF2ZOuQt+vXn/f39r1eBkuEzOY1h1O+wXYT1FtJQOFkdyyFf71l9E83LcfXmUt+81atAJ5ymUq1dBnJLDSG8XFiyyth3qkDhzUIyEE6Xh4qwv/5CjB+iu1C58DdNji1dDG5NOCRs4Hs/ei/SZKD5myarIzffV2LcO2W43Gm0gSoSLsSXZDJi08Hg1pTEfcAQc+Xne611MZqaYQZ35G9Axjog7pDYKdeiEX/GPW6XtSBoR6LpZlmsd1qHcrIHkeN//7m509LoC6uWcDz59lXQF1giIn69HvNRK+FiBdYzxWpU4g6L4T6lQz4esbyXsN8iUc+NIqwzip1yJhyHV9iBeUpwjOOgnR+6qYCM0mgK+S7MaOiB+PZmjM2YMET1HmFIi70U1qU85EEHJBifMZySMap3BEK6fXbRXrfEDVSe5kN8m1PGjlM2SvVbJYAyu3IUeZn/tOWZbsLnCcUwomhH/qEh85921M+nxZ5XnQApXFB6vKmc/zTk3JkllvMWQwHiMstZ6klv5LnMsnpwJ8Ho38iTeE5Q7AezLWshhj1NefZXwfyiRuJxT4Ni/8jdee0BoctblnZxpjz2b+3P4aIef/l4hmUdmPHRYjm9wEAq3aOWpPOUHmHGgXAHGQOmoIhZNz5hXFYqldSpgMurD+K9sA+4jGnqWfEuk2kE1MeOZBMBQpKIc48nOGOKc03xec6lOxUcEv5B60IbUnpUX2fsWv4iDM+ILUgfGbV91vhOKc1YUDyYAkUke1ewsb9bLBXn9Gbhv8FN1fs8fOdcVsz6fNatgJiKxGH24Idl9XM8jrEeV0w6jlH951YYMqfBbys+LAIH8eWVjOUgaiWUfeWM5eBAYbbufYn8DvDiU1knPoxLr7l+RvVWno66DWU9smFZSeQ34+Bbor2EU1QsmN9R28sawvdN6rb/8DRqdcOrXP2sru7uXnxayi5rvvCKL4iKY6fKdxz2Tsre+3x6WlhCKhROTzZY0//03e01po7OLQZ/GHivhrw3/KuDB7qVMvKjiWrLWT83/vuJ3F1OoOD+UPEDD9I6kuf9webCouUN9WZfmkyZMmXKlCld+g/VZZM/Z2RyLwAAAABJRU5ErkJggg==">
     <hr>
     <div class="box">
         <p>Common text replacements:</p>
@@ -75,32 +90,33 @@
 
     <hr>
     <div class="box">
-    <div class="box">
-        <h2>URL Encoder</h2>
-        <input type="text" id="textInput" placeholder="Enter text to encode">
-        <button onclick="encodeText()">Encode</button>
-        <p>Encoded: <code id="encodedOutput">Enter text to encode</code></p>
+        <h2>Elaborated Examples</h2>
+        <div class="box">
+            <h3>URL Encoder</h3>
+            <input type="text" id="textInput" placeholder="Enter text to encode">
+            <button onclick="encodeText()">Encode</button>
+            <p>Encoded: <code id="encodedOutput">Enter text to encode</code></p>
 
-        <script>
-            function encodeText() {
-                var text = document.getElementById('textInput').value;
-                var encoded = encodeURIComponent(text);
-                document.getElementById('encodedOutput').textContent = encoded;
-            }
-        </script>
-    </div>
+            <script>
+                function encodeText() {
+                    var text = document.getElementById('textInput').value;
+                    var encoded = encodeURIComponent(text);
+                    document.getElementById('encodedOutput').textContent = encoded;
+                }
+            </script>
+        </div>
 
-    <a href="https://flyingbacen.github.io/?protocol=roblox&launchargs=experiences%2Fstart%3FplaceId%3D15532962292%26linkCode%3D03684619728623677095913013347115"></a>
-    <p>
-        An example link may look like: <code class="cool"><a href="https://flyingbacen.github.io/?protocol=roblox&launchargs=navigation%2Fshare_links%3Fcode%3D1b87a02eb105d0419bc5f7ad71bcef31%26type%3DServer">https://flyingbacen.github.io/?protocol=roblox&launchargs=navigation%2Fshare_links%3Fcode%3D1b87a02eb105d0419bc5f7ad71bcef31%26type%3DServer</a></code>
-        <br>which will redirect to <code class="cool">roblox://navigation/share_links?code=1b87a02eb105d0419bc5f7ad71bcef31&type=Server</code> and open your private server automatically.
-    </p>
-    <hr>
-    <p>
-        When using a private server link code instead of the share code, which is more reliable, the link would look like:
-        <code class="cool"><a href="https://flyingbacen.github.io/?protocol=roblox&launchargs=experiences%2Fstart%3FplaceId%3D15532962292%26linkCode%3D03684619728623677095913013347115">https://flyingbacen.github.io/?protocol=roblox&launchargs=experiences%2Fstart%3FplaceId%3D15532962292%26linkCode%3D03684619728623677095913013347115</a></code>
-        <br>which redirects to <code class="cool">roblox://experiences/start?placeId=15532962292&linkCode=03684619728623677095913013347115</code>
-    </p>
+        <a href="https://flyingbacen.github.io/?protocol=roblox&launchargs=experiences%2Fstart%3FplaceId%3D15532962292%26linkCode%3D03684619728623677095913013347115"></a>
+        <p>
+            An example link may look like: <code class="cool"><a href="https://flyingbacen.github.io/?protocol=roblox&launchargs=navigation%2Fshare_links%3Fcode%3D1b87a02eb105d0419bc5f7ad71bcef31%26type%3DServer">https://flyingbacen.github.io/?protocol=roblox&launchargs=navigation%2Fshare_links%3Fcode%3D1b87a02eb105d0419bc5f7ad71bcef31%26type%3DServer</a></code>
+            <br>which will redirect to <code class="cool">roblox://navigation/share_links?code=1b87a02eb105d0419bc5f7ad71bcef31&type=Server</code> and open your private server automatically.
+        </p>
+        <hr>
+        <p>
+            When using a private server link code instead of the share code, which is more reliable, the link would look like:
+            <code class="cool"><a href="https://flyingbacen.github.io/?protocol=roblox&launchargs=experiences%2Fstart%3FplaceId%3D15532962292%26linkCode%3D03684619728623677095913013347115">https://flyingbacen.github.io/?protocol=roblox&launchargs=experiences%2Fstart%3FplaceId%3D15532962292%26linkCode%3D03684619728623677095913013347115</a></code>
+            <br>which redirects to <code class="cool">roblox://experiences/start?placeId=15532962292&linkCode=03684619728623677095913013347115</code>
+        </p>
     </div>
 </body>
 </html>
