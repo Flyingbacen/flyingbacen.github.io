@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>title</title>
+    <script>
+    (function(){
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var proto = params.get('protocol');
+            var launch = params.get('launchargs');
+            if (!proto || !launch) return;
+            // normalize protocol (remove trailing : or /)
+            proto = proto.replace(/[:\/]+$/,'');
+            // launchargs will be URL-encoded when provided; decode it
+            var decoded = decodeURIComponent(launch);
+            var target = proto + '://' + decoded;
+            // replace so this page isn't kept in history
+            window.location.replace(target);
+        } catch (e) {
+            alert('redirect error', e);
+        }
+    })();
+    </script>
 </head>
 <body>
     <h1>WIP Test</h1>
