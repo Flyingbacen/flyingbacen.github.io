@@ -31,6 +31,10 @@ body {
     align-items: center;
 }
 
+#main h3 {
+    text-align: center;
+}
+
 #canvasContainer {
     display: flex;
 }
@@ -62,7 +66,7 @@ canvas {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 340px;
     min-width: 200px;
-    max-height: 90vh; /* prevent overflowing viewport */
+    max-height: 90vh;
     overflow-y: auto;
     overflow-x: hidden; /* unnecessary like 2px scroll when adding more positions */
 }
@@ -162,32 +166,40 @@ button:active {
 /* =========================
    Range Inputs
    ========================= */
-input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
+/* WebKit track */
+input[type="range"]::-webkit-slider-runnable-track {
     height: 10px;
     background: #ddd;
     border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-    transition: background 0.3s;
 }
 
-input[type="range"]::-webkit-slider-thumb,
+/* WebKit thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px; /* center thumb on track */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Firefox track */
+input[type="range"]::-moz-range-track {
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Firefox thumb */
 input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
     background: #4CAF50;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.2s;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover,
-input[type="range"]::-moz-range-thumb:hover {
-    background: #45a049;
-    transform: scale(1.1);
+    border: none;
 }
 
 /* =========================
