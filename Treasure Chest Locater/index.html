@@ -17,12 +17,18 @@
             <button onclick="addMaxInputs()">Add Max Positions</button>
             <br>
 
-            <input type="checkbox" name="labelsEnabled" id="labelsEnabled" onchange="draw()" checked>
-            <label for="labelsEnabled">Enable Labels</label>
+            
+            <div id="labels">
+                <input type="checkbox" name="labelsEnabled" id="labelsEnabled" onchange="draw()" checked>
+                <label for="labelsEnabled">Enable Labels</label>
+            </div>
             <br>
 
-            <label for="chestDotScale">Chest Dot Scale: </label>
-            <input type="range" name="chestDotScale" id="chestDotScale" min="100" max="500" value="500" oninput="draw()">
+            <div id="dotScaleRange">
+                <label for="chestDotScale">Chest Dot Scale: </label>
+                <input type="range" name="chestDotScale" id="chestDotScale" min="100" max="500" value="500" oninput="draw()">
+            </div>
+            
 
             <noscript>
                 <h2> This website relies on javascript. Please Enable Javascript to enable use of this page. </h2>
@@ -32,11 +38,11 @@
         <div id="canvasContainer">
             <canvas id="map" width="900" height="700"></canvas>
         </div>
-    </div>
-    <div id="footer">
-        <p> Made by <a href="https://github.com/flyingbacen" target="_blank">Flyingbacen</a> based on 
-            <a href="https://www.desmos.com/calculator/uixqtwi5lk" target="_blank">the Desmos tool here.</a>
-        </p>
+        <div id="footer">
+            <p> Made by <a href="https://github.com/flyingbacen" target="_blank">Flyingbacen</a> based on 
+                <a href="https://www.desmos.com/calculator/uixqtwi5lk" target="_blank">the Desmos tool here.</a>
+            </p>
+        </div>
     </div>
     <script src="./script.ts" type="text/typescript"></script>
     <script src="https://unpkg.com/typescript/lib/typescript.js"></script>
