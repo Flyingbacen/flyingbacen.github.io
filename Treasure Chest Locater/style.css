@@ -1,0 +1,244 @@
+/* CSS made with the aid of AI */
+
+:root {
+    --spring-easing: linear(0, 0.0015, 0.0056 1.05%, 0.0128 1.61%, 0.0232 2.2%, 0.0533 3.46%, 0.0957 4.82%, 0.1374 5.98%, 0.19 7.31%, 0.4239 12.79%, 0.5322 15.48%, 0.6341 18.32%, 0.6792 19.71%, 0.7196 21.08%, 0.7575 22.47%, 0.7926, 0.8241 25.34%, 0.8528 26.81%, 0.8787 28.31%, 0.9017 29.85%, 0.9224 31.46%, 0.9403 33.1%, 0.9547 34.67%, 0.9673 36.32%, 0.9779 38.03%, 0.9869 39.85%, 1 43.83%, 1.0072 48.48%, 1.0092 55.61%, 1.0018 78.4%, 1 99.97%);
+    --spring-duration: 2.392s;
+}
+
+/* =========================
+   Layout & Body
+   ========================= */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    gap: 20px;
+    background-color: blanchedalmond;
+}
+
+/* =========================
+   Main & Canvas Containers
+   ========================= */
+#main {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#canvasContainer {
+    display: flex;
+}
+
+canvas {
+    border: 1px solid black;
+    width: 900px;
+    height: 700px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+#footer {
+    text-align: center;
+}
+
+/* =========================
+   Controls Container
+   ========================= */
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    background-color: #fdf9f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 340px;
+    min-width: 200px;
+    max-height: 90vh; /* prevent overflowing viewport */
+    overflow-y: auto;
+    overflow-x: hidden; /* unnecessary like 2px scroll when adding more positions */
+}
+
+/* Buttons, labels, and range inputs inside controls */
+#controls button,
+#controls label,
+#controls input[type="range"] {
+    margin-top: 8px;
+}
+
+/* =========================
+   Inputs Container
+   ========================= */
+#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#inputs div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 140px;
+    margin-bottom: 5px;
+    animation: addInput var(--spring-duration) var(--spring-easing);
+}
+
+/* Number inputs */
+#inputs input[type="number"] {
+    width: 70px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+#inputs input[type="number"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* =========================
+   Delete Icon
+   ========================= */
+.delete {
+    margin-left: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    color: #888;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.delete:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+.delete svg {
+    pointer-events: none; /* click works on span, not just SVG */
+}
+
+/* =========================
+   Buttons
+   ========================= */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background-color: #3e8e41;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Range Inputs
+   ========================= */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-moz-range-thumb:hover {
+    background: #45a049;
+    transform: scale(1.1);
+}
+
+/* =========================
+   Checkboxes
+   ========================= */
+input[type="checkbox"] {
+    accent-color: #4CAF50;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* =========================
+   Labels & Text
+   ========================= */
+#controls label {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* =========================
+   Misc / Utility
+   ========================= */
+input#chestDotScale::before { content: "1"; }
+input#chestDotScale::after { content: "10"; }
+
+noscript h2 {
+    background-color: red;
+    display: inline-block;
+    max-width: 300px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Responsive adjustment */
+@media (max-height: 700px) {
+    #controls {
+        overflow-y: auto;
+    }
+}
+
+@keyframes addInput {
+    0% {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
